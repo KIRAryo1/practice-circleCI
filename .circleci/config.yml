@@ -40,6 +40,12 @@ jobs:
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
+      # run rubocop
+      - run:
+          name: run rubocop
+          command: |
+            bundle exec rubocop -c .rubocop.yml
+
       # run tests!
       - run:
           name: run tests
